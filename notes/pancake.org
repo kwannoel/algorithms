@@ -1,0 +1,50 @@
+#+TITLE: pancake
+
+* Start from base cases
+
+DRAW diagram
+e.g.
+2                           5 --> this goes to the bottom --> 1
+5 --> this goes to top -->  2                                 4
+3                           3                                 3
+4                           4                                 2
+1                           1                                 5
+
+T(1) = 0
+T(2) = 1
+T(3)
+T(n) = T(n - 1) + 2
+     = 2 + 2 + 2 + ... + T(2)
+     = 2(n - 2) + 1
+     = 2n - 3
+
+* At the end of the ith flip i/2 largest
+* Selection sort similar to this sorting
+In this case we find the maximum
+
+* Burnt side
+need to flip one extra time in the worst case
+worst cases:
+b(1) = 1
+b(2) = 4 -- this is when big one is bottom, both are burnt side up.
+b(n) = 3(n - 2) + 4
+     = 3n - 2
+
+Worst case is usually almost correct but not there
+
+* 2 Sizes of pancake
+Alternating is worst case
+
+* Best case
+lower bound -> best you can do for worst case -> n flips
+best case -> best case -> n flips
+pairwise out of order -> 1, 3, 5, 7, 2, 4, 6, 8
+
+* Counting sort
+
+T(n) = 2T(n/2)) + O(nlogn)
+     = 2(2T(n/4) + O(n/2log(n/2))) + O(nlogn)
+     = O(4T(n/4) + n log(n/2) + nlogn)
+     = O(nlogn + nlogn/2 + nlogn/4 + ... n logn/n)
+     = O(n(logn + logn/2 + logn/4 + ... + logn/n))
+     = O(n(logn + logn - log2 + logn - log4 ...))

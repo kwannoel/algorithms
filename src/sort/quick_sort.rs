@@ -4,6 +4,7 @@
 /// Description: Looks through entire list for minimum element through range 0..list_length
 /// shrinks list by 1 i.e. range 1..list_length
 /// repeat
+/// Best case when we pick a good pivot and split roughly by half
 pub fn quick_sort(arr: &mut [i32]) {
     let pivot = 0;
     let mut pivot_swap_position = 1;
