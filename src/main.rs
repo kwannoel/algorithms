@@ -1,4 +1,5 @@
 mod sort;
+mod shuffle;
 mod test_utils;
 use crate::sort::merge_sort::*;
 fn main() {
